@@ -1,0 +1,14 @@
+// notificationService.js
+const notificationService = {
+  success: (message) => {
+    alert(`Success: ${message}`);
+  },
+  error: (message) => {
+    alert(`Error: ${message}`);
+  },
+  warning: (message) => {
+    alert(`Warning: ${message}`);
+  },
+};
+
+export default notificationService;
