@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>最新虐心小游戏废柴勇士，听说没人能过37秒。</title>
+    <script type="text/javascript" src="cocos2d-js-v3.0-lite.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/ismobile.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/isIOSDevice.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/PlayScene.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/resource.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/WelcomeScene.js" charset="UTF-8"></script>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    .page-footer {
+    	  position: fixed;
+    	  right: 0px;
+    	  bottom: 0px;
+    	  display: flex;
+    	  align-items: center;
+    	  padding: 5px;
+    	  color: black;
+    	  background: rgba(255, 255, 255, 0.65);
+    	}
+    	.page-left {
+    	  position: fixed;
+    	  left: 0px;
+    	  bottom: 0px;
+    	  display: flex;
+    	  align-items: center;
+    	  padding: 5px;
+    	  color: black;
+    	  background: rgba(255, 255, 255, 0.65);
+    	}
+    	
+    	.page-footer a {
+    	  display: flex;
+    	  margin-left: 4px;
+    	}
+    	.touxiang{
+    		bottom: 0px;
+    		width:30px;
+    		height:30px;
+    	}
+    </style>
+    	<script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script>
+    	<script>LA.init({id:"JxVJPIpe3UAQqoDx",ck:"JxVJPIpe3UAQqoDx"})</script>
+    	<script>
+    	var _hmt = _hmt || [];
+    	(function() {
+    	  var hm = document.createElement("script");
+    	  hm.src = "https://hm.baidu.com/hm.js?a9430a37066911650e26adadcc42798a";
+    	  var s = document.getElementsByTagName("script")[0]; 
+    	  s.parentNode.insertBefore(hm, s);
+    	})();
+    	</script>
+    	<!-- 谷歌广告 -->
+    	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7056167681359419" crossorigin="anonymous"></script>
+</head>
+<body style = "background-color: #000">
+<canvas id="gameCanvas" width="480" height="800"></canvas>
+<script type="text/javascript">
+    window.onload = function() {
+        cc.game.onStart = function () {
+            cc.view.setDesignResolutionSize(480, 800, cc.ResolutionPolicy.SHOW_ALL);
+            scaleValue1 = cc.director.getWinSize();
+            console.log("scaleValue:" + scaleValue1.width);
+            cc.view.resizeWithBrowserSize(true);
+            //load resources
+            var texture2d = self._texture2d = new cc.Texture2D();
+            texture2d.initWithElement(res.huo_png);
+            cc.LoaderScene.preload(g_resources, function () {
+                cc.director.runScene(new WelcomeScene());
+            }, this);
+
+        };
+        cc.game.run("gameCanvas");
+    };
+
+</script>
+<script language=javascript>
+  //       var game9g = new Game9G("fcys");
+  //       game9g.shareData.title = "废柴勇士";
+  //       game9g.shareData.content = "最新虐心小游戏废柴勇士，听说没人能过37秒。";
+
+		// function goHome(){
+		// 	window.location=game9g.homeurl;
+		// }
+		// function clickMore(){
+		// 	 window.location=game9g.moreurl;
+		// }
+		// function dp_share(){
+		// 	game9g.share();
+		// }
+		// function dp_Ranking(){
+		// 	window.location=game9g.homeurl;
+		// }
+
+		// function showAd(){
+		// }
+		// function hideAd(){
+		// }
+		// function dp_submitScore(score){
+		// 	if(score>0){
+		// 		game9g.score =parseInt(score);
+		// 		game9g.scoreName = "坚持了"+score+"秒";
+		// 		game9g.shareData.title ="我在《废柴勇士》中坚持了"+score+"秒，听说没人能过37秒，快来挑战吧！-9G游戏";
+		// 		game9g.utils.shareConfirm("你在《废柴勇士》中坚持了"+score+"秒,通知一下小伙伴吧!",dp_share);
+		// 	}
+		// }
+</script>
+
+	<footer class="page-footer">
+	  <span>更多游戏👉</span>
+	  <a href="https://haiyong.site/moyu" target="_blank">
+		<img class="touxiang"  src="https://haiyong.site/img/favicon.png">
+	  </a>
+	</footer>
+	<footer class="page-left">  
+	  <a href="https://code.haiyong.site/" target="_blank">
+		<img class="touxiang"  src="https://code.haiyong.site/wp-content/uploads/2022/10/logo.jpg">
+	  </a>
+	  <span>👈游戏源码</span>
+	</footer>
+</body>
+</html>
