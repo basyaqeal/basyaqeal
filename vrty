@@ -1,0 +1,48 @@
+<template>
+    <div>
+      <el-input v-model="textarea1" :rows="5" type="textarea" placeholder="请输入" />
+    </div>
+</template>
+
+<script setup>
+import { ref, reactive,, onMounted, onUnmounted } from 'vue'
+import WebSocketReconnect from '@/commentUtil/WebsocketTool'
+
+// --------------------------------------------
+let textarea1 = ref('【消息】---->')
+let websocket = null
+//判断当前浏览器是否支持WebSocket
+if ('WebSocket' in window) {
+  //连接WebSocket节点
+  websocket = new WebSocketReconnect('ws://127.0.0.1:8080' + '/dev-api/websocket/1122334455')
+} else {
+  alert('浏览器不支持webSocket')
+}
+
+//接收到消息的回调方法
+websocket.socket.onmessage = function (event) {
+  let data = event.data
+  console.log('后端传递的数据:' + data)
+  //将后端传递的数据渲染至页面
+  textarea1.value = textarea1.value + data + '\n' + '【消息】---->'
+}
+//监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+window.onbeforeunload = function () {
+  websocket.close()
+}
+//关闭连接
+function closeWebSocket() {
+  websocket.close()
+}
+//发送消息
+function send() {
+  websocket.socket.send({ kk: 123 })
+}
+
+//------------------------------------
+</script>
+
+<style scoped>
+
+</style>
+
