@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="www.baidu.com">百度</a>
+    <a href="html05.html">跳转到图片标签</a>
+    <a href="#">不跳转</a>
+    <a href="https://www.douyin.com/download/pc/obj/douyin-pc-client/7044145585217083655/releases/11634728/3.5.1/win32-ia32/douyin-downloader-v3.5.1-win32-ia32-douyinDownload1.exe">下载抖音</a>
+    <a href="https://blog.csdn.net/QQ3447387928?spm=1011.2421.3001.5343"><img src="小杨.jpg" alt="" width="100px" height="100px"></a>
+</body>
+</html>
