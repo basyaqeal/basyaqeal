@@ -1,0 +1,56 @@
+// 使用MQTT
+import useMqtt from '../../utils/allMqtt.js'
+const { startMqtt, link, UnSubscribe, destroyConnection } = useMqtt();
+ 
+ 
+//html:
+    <div class="message-prompt" :class="{ 'change': animateClass == true }">
+                <el-dropdown trigger="click" @command="messageHandleCommand">
+                    <span style="cursor: pointer;">
+                        <el-badge :value="all" :max="99" class="item">
+                            <el-icon color="#fff" size="20">
+                                <Bell />
+                            </el-icon>
+                        </el-badge>
+                    </span>
+                    <template #dropdown>
+                        <el-dropdown-menu>
+                            <el-dropdown-item command="warning">
+                                <span>预警</span>
+                                <span class="warning-text num">{{ alarm }}</span>
+                            </el-dropdown-item>
+                            <el-dropdown-item command="alarm">
+                                <span>报警</span>
+                                <span class="alarm-text num">{{ warning }}</span>
+                            </el-dropdown-item>
+                            <el-dropdown-item command="all">
+                                <span>查看全部</span>
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </template>
+                </el-dropdown>
+            </div>
+ 
+ 
+ 
+ 
+ 
+ 
+//因为我在链接的时候 顺便调用了他的订阅方法 在js中 所以我在这直接链接
+function ConcatMqttFn() {
+    startMqtt('', (topic, message) => {
+//拿到的数据
+        const msg = JSON.parse(message.toString());
+        // console.log(msg, 'msg');
+        alarm.value = msg.data.alarm
+        all.value = msg.data.all
+        warning.value = msg.data.warning
+    });
+}
+ 
+ 
+//生命周期销毁的时候 取消 断开
+onMounted(() => {
+    destroyConnection()
+    ConcatMqttFn()
+});
