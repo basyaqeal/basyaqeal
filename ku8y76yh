@@ -1,0 +1,8 @@
+import fetchData from './fetchData'
+
+test('fetchData 返回结果为 404', () => {
+ expect.assertions(1) // 下面的 expect 至少执行一个
+  return fetchData().catch((e) => {
+    expect(e.toString().indexOf('404') > -1).toBe(true)
+  })
+})
