@@ -1,0 +1,19 @@
+  this.Particle = function() {
+      var newWidth = _this.rand(1, 20);
+      var newHeight = _this.rand(1, 45);
+      this.x = _this.rand(10 + (newWidth / 2), _this.cw - 10 - (newWidth / 2));
+      this.y = -newHeight;
+      this.vx = 0;
+      this.vy = 0;
+      this.width = newWidth;
+      this.height = newHeight;
+      this.hue = _this.rand(200, 220);
+      this.saturation = _this.rand(30, 60);
+      this.lightness = _this.rand(30, 60);
+    };
+    this.Particle.prototype.update = function(i) {
+      this.vx += this.vx;
+      this.vy += _this.gravity;
+      this.x += this.vx;
+      this.y += this.vy;
+    };
