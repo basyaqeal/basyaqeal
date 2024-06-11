@@ -1,0 +1,23 @@
+     try
+                {
+                    Conn.Open();
+ 
+                    myDr = Cmd.ExecuteReader() as DmDataReader;
+ 
+                    ArrayList rowdata = new ArrayList();
+                    int _fieldcount = myDr.FieldCount;
+                    Object[] colvalues = new Object[_fieldcount];
+                    for (int i = 0; i < _fieldcount; i++)
+                    {
+                        colvalues[i] = myDr.GetName(i);
+                    }
+                    if (hastitle)
+                        rowdata.Add(colvalues);
+                    while (myDr.Read())
+                    {
+                        Object[] values = new Object[_fieldcount];
+                        myDr.GetValues(values);
+                        rowdata.Add(values);
+                        RowsCount++;
+                    }
+                   
