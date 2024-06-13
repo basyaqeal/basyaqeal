@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[CCVC_PriceList](
+	[PName] [nvarchar](50) NOT NULL,
+	[CCVC] [int] NOT NULL,
+	[Price] [money] NOT NULL,
+	[LogoUrl] [nvarchar](500) NULL,
+) 
+GO
